@@ -37,10 +37,10 @@ pipeline {
          script {
              sshagent(credentials : ['aws_ec2']){
 
-                sh 'ssh -o StrictHostKeyChecking=no -i assignment-c7key.pem ubuntu@10.0.2.129'
+                sh 'ssh -o StrictHostKeyChecking=no -i assignment-c7key.pem ubuntu@10.0.1.250'
 
              }
-                //sh 'ssh -i /login/assignment-c7key.pem ubuntu@10.0.2.129'
+                //sh 'ssh -i /login/assignment-c7key.pem ubuntu@10.0.1.250'
                 sh 'docker run -d -p 8081:8080 --rm --name node 861199625190.dkr.ecr.us-east-1.amazonaws.com/c7-assignment/node'
             }
       }
